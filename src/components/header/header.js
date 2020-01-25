@@ -17,39 +17,39 @@ export default class Header extends React.Component {
         </div>
 
         <div id="header-nav" className="push-right header-nav">
-          <Link to="/" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <Link to="/" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faUserAlt} />
             </div>
             <div className="header-nav-label">About</div>
           </Link>
-          <Link to="/experience" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <Link to="/experience" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faCoffee} />
             </div>
             <div className="header-nav-label">Experience</div>
           </Link>
-          <Link to="/resume" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <Link to="/resume" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faFile} />
             </div>
             <div className="header-nav-label">Resume</div>
           </Link>
-          <Link to="/contact" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <Link to="/contact" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faPhone} />
             </div>
             <div className="header-nav-label">Contact</div>
           </Link>
-          <Link to="/blog" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <Link to="/blog" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faBlog} />
             </div>
             <div className="header-nav-label">Blog</div>
           </Link>
-          <a href="https://github.com/sean-mooney" rel="noopener noreferrer" target="_blank" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+          <a href="https://github.com/sean-mooney" rel="noopener noreferrer" target="_blank" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
-              <FontAwesomeIcon icon={faCoffee} />
+              <i class="devicon-github-plain"></i>
             </div>
             <div className="header-nav-label">GitHub</div>
           </a>

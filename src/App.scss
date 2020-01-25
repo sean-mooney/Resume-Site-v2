@@ -1,11 +1,35 @@
-$header1-bg: #e13dff;
-$header1-border: #8535e8;
-$header1-hover-text: #e13dff;
-$header1-hover-bg: #FFF;
-$header1-hover-border: #e13dff;
-$header1-hover-icon: #FFF;
+$app-bg: #f8f8f8;
+
+$header1-bg: #FFF;
+$header1-border: #001740;
+$header1-icon: #3BC8FF;
+$header1-text: #3BC8FF;
+$header1-hover-text: #FFF;
+$header1-hover-bg: #3BC8FF;
+$header1-hover-border: #3BC8FF;
+$header1-hover-icon: #3BC8FF;
+$header1-hover-icon-bg: #FFF;
+$header-full-bottom-border: #3BC8FF;
+
+$header-logo-text: #3BC8FF;
+$header-logo-s-border: #3BC8FF;
+$header-logo-s-bg: #FFF;
+
+body {
+    background: $app-bg;
+}
 
 .push-right {
     margin-left: auto;
 }
 
+
+@font-face {
+    font-family: Zwodrei;
+    src: url(./fonts/Zwodrei.woff2);
+}
+
+@font-face {
+    font-family: Copperplate;
+    src: url(./fonts/Copperplate.woff2);
+}

@@ -6,7 +6,7 @@
     height: 90px;
     background-color: $header1-bg;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     z-index: 10;
 }
 
@@ -26,52 +26,73 @@
 
 .header-nav {
     display: flex;
-    margin-right: 20px;
-    margin-bottom: 15px;
+    // margin-right: 10px;
+    height: 100%;
+    // margin-bottom: 15px;
+    align-items: center;
 }
 
 .header-nav-item {
-    border: 3px solid $header1-bg;
-    background: white;
-    border-radius: 50%;
-    color: $header1-bg;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    margin: 0px 10px;
+    background: $header1-bg;
+    color: white;
+    width: 125px;
+    height: 100%;
+    font-size: 16px;
     position: relative;
     cursor: pointer;
     transition: all 0.25s;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: wrap;
+    border-left: 1px solid $header1-border;
     
-    .header-nav-label {
-        background: white;
-        opacity: 0;
+    .header-nav-icon {
+        margin-top: -10px;
         display: flex;
-        position: absolute;
+        align-items: center;
         justify-content: center;
-        top: 120%;
-        padding: 5px 10px;
-        border-radius: 15px;
-        left: 0;
-        right: 0;
-        width: fit-content;
-        transform: translateX(-30%);
-        transition: transform 0.5s, visibility 0.5s;
+        color: $header1-bg;
+        background: white;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        transition: all 0.25s;
+        border-radius: 50%;
+    }
+
+    .header-nav-label {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background: $header1-bg;
+        top: 65%;
+        transition: all 0.25s;
     }
 }
 
-.header-nav-item:hover {
-    color: white;
-    background: $header1-bg;
-    border: 3px solid white;
-
+.header-nav-item:hover  {
+    background: $header1-hover-bg;
     .header-nav-label {
-        color: $header1-bg;
-        transform: translate3d(-30%, 15%, 0);
-        opacity: 1;
+        color: $header1-hover-text;
+        top: 100%;
+        border: 2px solid $header1-hover-border;
+        border-top: none;
+        font-size: 18px;
+        background: $header1-hover-bg;
+        padding-bottom: 5px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        font-weight: 600;
+    }
+    
+    .header-nav-icon {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        background: $header1-bg;
+        color: $header1-hover-icon;
     }
 }

@@ -1,5 +1,6 @@
 $app-bg: #f8f8f8;
 
+$header-height: 90px;
 $header1-bg: #FFF;
 $header1-border: #001740;
 $header1-icon: #3BC8FF;
@@ -9,18 +10,47 @@ $header1-hover-bg: #3BC8FF;
 $header1-hover-border: #3BC8FF;
 $header1-hover-icon: #3BC8FF;
 $header1-hover-icon-bg: #FFF;
-$header-full-bottom-border: #3BC8FF;
+$header1-full-bottom-border: #3BC8FF;
 
-$header-logo-text: #3BC8FF;
-$header-logo-s-border: #3BC8FF;
-$header-logo-s-bg: #FFF;
+$header1-logo-text: #3BC8FF;
+$header1-logo-s-border: #3BC8FF;
+$header1-logo-s-bg: #FFF;
+$header1-logo-text-hover: #282480;
+$header1-logo-border-hover: #282480;
 
 body {
     background: $app-bg;
 }
 
+.app {
+    margin-top: $header-height;
+}
+
 .push-right {
     margin-left: auto;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1028px;
+    margin: auto;
+    background: white;
+    box-shadow: 0px -2px 5px #888888;
+    height: calc(100vh - 90px);
+}
+
+.content-container {
+    padding: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 1028px) {
+    .content-container {
+        padding: 20px;
+    }
 }
 
 

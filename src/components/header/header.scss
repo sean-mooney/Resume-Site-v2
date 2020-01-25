@@ -8,7 +8,8 @@
     display: flex;
     align-items: center;
     z-index: 10;
-    border-bottom: 1px solid $header-full-bottom-border;
+    top: 0;
+    border-bottom: 1px solid $header1-full-bottom-border;
     box-shadow: 1px 1px 5px #3BC8FF;
 }
 
@@ -39,7 +40,7 @@
     font-size: 16px;
     position: relative;
     cursor: pointer;
-    transition: all 0.25s;
+    transition: background 0.25s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +57,7 @@
         width: 32px;
         height: 32px;
         font-size: 16px;
-        transition: all 0.25s;
+        transition: font-size 0.25s, color 0.25s, background 0.25s, width 0.25s, height 0.25s;
         border-radius: 50%;
     }
 
@@ -74,6 +75,14 @@
 
 .header-nav-item:hover  {
     background: $header1-hover-bg;
+    .header-nav-icon {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        background: $header1-hover-icon-bg;
+        color: $header1-hover-icon;
+    }
+
     .header-nav-label {
         color: $header1-hover-text;
         top: 100%;
@@ -86,31 +95,114 @@
         border-bottom-right-radius: 6px;
         font-weight: 600;
     }
-    
-    .header-nav-icon {
-        font-size: 24px;
-        width: 50px;
-        height: 50px;
-        background: $header1-hover-icon-bg;
-        color: $header1-hover-icon;
-    }
-}
-
-.header-logo-s {
-    padding: 5px 15px;
-    background: $header-logo-s-bg;
-    border: 3px solid $header-logo-s-border;
-    border-radius: 5px;
-    margin-right: 2px;
 }
 
 .header-text {
     font-family: Zwodrei;
     margin-left: 20px;
-    color: $header-logo-text;
+    color: $header1-logo-text;
     font-size: 32px;
     width: auto;
     font-weight: 800;
+    cursor: pointer;
+    transition: color .25s;
+}
+
+.header-logo-s {
+    padding: 5px 15px;
+    background: $header1-logo-s-bg;
+    border: 3px solid $header1-logo-s-border;
+    border-radius: 5px;
+    margin-right: 2px;
+    transition: border-color .25s;
+}
+
+.header-text:hover {
+    color: $header1-logo-text-hover;
+    .header-logo-s {
+        border-color: $header1-logo-border-hover;
+    }
+}
+
+.header-burger {
+    display: none;
+}
+
+@media (max-width: 1028px) {
+    .page-header {
+        border: none;
+    }
+
+    .header-logo {
+        min-width: 147px;
+    }
+
+    .header-text {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+
+    .header-logo-s {
+        padding: 5px 10px;
+        margin-right: 2px;
+    }
+
+    .header-burger {
+        font-size: 26px;
+        color: $header1-logo-text;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        min-width: 40px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    .header-nav {
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        margin-top: calc(#{$header-height} + 5px);
+        transition: all 0.5s linear, opacity 0.25s linear;
+        position: absolute;
+        max-height: 0;
+        min-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    .header-nav.show-nav {
+        display: flex;
+        opacity: 1;
+        max-height: 100%;
+        min-height: 100vh;
+        overflow: auto;
+    }
+
+    .header-nav-item {
+        width: 100%;
+        border: none;
+        justify-content: flex-start;
+        min-height: 70px;
+        max-height: 70px;
+        .header-nav-icon {
+            margin: 0 10px;
+        }
+        .header-nav-label {
+            position: relative;
+            color: $header1-text;
+            top: 0;
+            width: 125px;
+            border:none;
+            justify-content: flex-start;
+            font-size: 26px;
+        }
+    }
+
 }
 
 @font-face {

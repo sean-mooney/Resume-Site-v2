@@ -1,5 +1,13 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import './App.scss';
+
+import About from './pages/about/about';
+
 import Header from './components/header/header';
 import Intro from './components/intro/intro';
 
@@ -7,7 +15,17 @@ function App() {
   var disableIntro = Math.random() > 0.1;
   return (
     <div className="app">
-      <Header></Header>
+      <Router>
+        <Header></Header>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <About />
+          </Route>
+        </Switch>
+      </Router>
       {disableIntro || <Intro></Intro>}
     </div>
   );

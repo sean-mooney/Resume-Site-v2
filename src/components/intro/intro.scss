@@ -1,0 +1,54 @@
+@import '../../App.scss';
+
+.intro-container {
+    background: $header1-bg;
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    -webkit-animation: reveal-page forwards ease-in; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 1.5s;
+    animation: reveal-page forwards;
+    animation-duration: 1s;
+    animation-delay: 1.25s;
+}
+
+.intro-text {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    font-size: 30px;
+    opacity: 0;
+    transition: all 0.25s;
+    -webkit-animation: text-intro forwards; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+    animation: text-intro forwards;
+    animation-duration: 2s;
+
+    // -webkit-animation-delay: 1.5s;
+    // animation-delay: 1s;
+    // -webkit-animation: hide-text forwards; /* Safari 4.0 - 8.0 */
+    // -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+    // animation: hide-text forwards;
+    // animation-duration: 1s;
+}
+
+@keyframes text-intro {
+    0% {top: 60%; opacity: 0;}
+    20%, 67% {top: 45%; left: 45%; opacity: 1;}
+    95% {top: 10%; left: 3%; opacity: 0.1;}
+    100% {top: 0%; left: 0%; opacity: 0; display: none;}
+}
+
+@keyframes reveal-page {
+    0% {min-height: 100%;}
+    80% {min-height: 70px; opacity: 1}
+    100% {min-height: 70px; opacity: 0; display: none;}
+}
+
+@keyframes hide-text {
+    0% { top: 45%; left: 45%; opacity: 1;}
+    100% { top: 0%; left: 0%; opacity: 0;}
+}

@@ -1,11 +1,14 @@
 @import '../../App.scss';
 
-.about-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px #3BC8FF;
-    border: 2px solid $header1-hover-border;
+.about-photo {
+    margin-bottom: 20px;
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px #3BC8FF;
+        border: 2px solid $header1-hover-border;
+    }
 }
 
 .about-container {

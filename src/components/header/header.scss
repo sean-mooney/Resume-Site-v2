@@ -130,6 +130,10 @@
     display: none;
 }
 
+.current-page-icon {
+    display: none;
+}
+
 @media (max-width: 1028px) {
     .page-header {
         border: none;
@@ -168,7 +172,7 @@
         left: 0;
         width: 100%;
         z-index: 100;
-        margin-top: calc(#{$header-height} + 5px);
+        margin-top: $header-height;
         transition: all 0.5s linear, opacity 0.25s linear;
         background: $header1-bg;
         position: absolute;
@@ -206,6 +210,29 @@
         }
     }
 
+    .current-page-icon {
+        margin-right: 20px;
+        font-size: 32px;
+        display: none;
+    }
+    
+    .header-current-location {
+        background-color: $header1-hover-bg;
+        color: $header1-hover-text;
+        .header-nav-label {
+            background-color: $header1-hover-bg;
+            color: $header1-hover-text;
+        }
+
+        .header-nav-icon {
+            color: $header1-hover-icon;
+            background: $header1-hover-icon-bg;
+        }
+        
+        .current-page-icon {
+            display: block;
+        }
+    }
 }
 
 @font-face {

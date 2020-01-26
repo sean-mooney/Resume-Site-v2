@@ -23,12 +23,11 @@ export default class About extends React.Component {
                                 <hr></hr>
 
                                 <div className="about-text">
-                                    <span className="italic">Programming is like solving a puzzle, you have all the pieces in front of you just need to put them together.</span>
+                                    <span className="italic">Programming is like solving a puzzle, you have all the pieces just need to put them together.</span>
                                     <br/>
                                     <br/>
                                     I've always enjoyed programming from an early age. When I was 11, I taught myself how to make my own video games and
-                                    through the years have moved on to web, mobile, and back-end development.
-                                    <br/>
+                                    through the years have moved on to learn web, mobile, and back-end development.
                                     <br/>
                                     Currently, I'm looking to contribute in a team environment as a full-stack developer.
                                 </div>

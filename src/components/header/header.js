@@ -1,10 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, matchPath, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserAlt, faCoffee, faFile, faPhone, faBlog, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faUserAlt, faCoffee, faFile, faPhone, faBlog, faBars, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import './header.scss';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {headerNavElement: null}
+    this.routeClicked = this.routeClicked.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({headerNavElement: document.getElementById("header-nav")});
+  }
+
+  routeClicked(wasBurger) {
+    if (!this.state.headerNavElement) this.setState({headerNavElement: document.getElementById("header-nav")});
+    if (wasBurger) this.state.headerNavElement.classList.toggle("show-nav");
+    else this.state.headerNavElement.classList.remove("show-nav");
+    document.body.style.overflow === "hidden" ? document.body.style.overflow = "auto" : document.body.style.overflow = "hidden";
+  }
+
   render() {
     return (
       <header className="page-header">
@@ -12,40 +29,45 @@ export default class Header extends React.Component {
         <Link to="/" className="header-logo">
           <div className="header-text"><span className="header-logo-s">S</span>ean Mooney</div>
         </Link>
-        <div className="header-burger" onClick={() => document.getElementById("header-nav").classList.toggle("show-nav")}>
+        <div className="header-burger" onClick={() => this.routeClicked(true)}>
           <FontAwesomeIcon icon={faBars} />
         </div>
 
         <div id="header-nav" className="push-right header-nav">
-          <Link to="/" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
+          <Link to="/about" className={`header-nav-item ${this.props.location.pathname === "/about" || this.props.location.pathname === "/" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faUserAlt} />
             </div>
             <div className="header-nav-label">About</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/experience" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
+          <Link to="/experience" className={`header-nav-item ${this.props.location.pathname === "/experience" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faCoffee} />
             </div>
             <div className="header-nav-label">Experience</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/resume" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
+          <Link to="/resume" className={`header-nav-item ${this.props.location.pathname === "/resume" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faFile} />
             </div>
             <div className="header-nav-label">Resume</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/contact" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
+          <Link to="/contact" className={`header-nav-item ${this.props.location.pathname === "/contact" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faPhone} />
             </div>
             <div className="header-nav-label">Contact</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/blog" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
+          <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faBlog} />
             </div>
             <div className="header-nav-label">Blog</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
           <a href="https://github.com/sean-mooney" rel="noopener noreferrer" target="_blank" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
@@ -58,3 +80,5 @@ export default class Header extends React.Component {
     );
   }
 }
+
+export default withRouter(Header);

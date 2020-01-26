@@ -49,7 +49,7 @@ export default class Header extends React.Component {
           </Link>
           <a href="https://github.com/sean-mooney" rel="noopener noreferrer" target="_blank" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
-              <i class="devicon-github-plain"></i>
+              <i className="devicon-github-plain"></i>
             </div>
             <div className="header-nav-label">GitHub</div>
           </a>

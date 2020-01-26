@@ -5,14 +5,14 @@ import {
   Route,
 } from "react-router-dom";
 import './App.scss';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './pages/about/about';
 
 import Header from './components/header/header';
 import Intro from './components/intro/intro';
 
 function App() {
-  var disableIntro = Math.random() > 0.1;
+  var disableIntro = false;
   return (
     <div className="app">
       <Router>

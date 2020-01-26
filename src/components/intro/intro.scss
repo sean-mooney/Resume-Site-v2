@@ -13,6 +13,7 @@
     animation: reveal-page forwards;
     animation-duration: 1s;
     animation-delay: 1.25s;
+    top: 0;
 }
 
 .intro-text {
@@ -26,6 +27,13 @@
     -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
     animation: text-intro forwards;
     animation-duration: 2s;
+
+    // -webkit-animation-delay: 1.5s;
+    // animation-delay: 1s;
+    // -webkit-animation: hide-text forwards; /* Safari 4.0 - 8.0 */
+    // -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+    // animation: hide-text forwards;
+    // animation-duration: 1s;
 }
 
 @keyframes text-intro {

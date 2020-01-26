@@ -1,0 +1,30 @@
+@import '../../App.scss';
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #3BC8FF;
+    border: 2px solid $header1-hover-border;
+}
+
+.about-container {
+    margin-top: 40px;
+}
+
+.about-title {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: $title-color;
+}
+
+.about-sub-title {
+    text-align: center;
+    color: $sub-title-color;
+}
+
+.about-text {
+    margin: 0 20px;
+    line-height: 40px;
+}

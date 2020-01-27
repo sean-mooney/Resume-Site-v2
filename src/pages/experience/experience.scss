@@ -1,0 +1,111 @@
+@import '../../App.scss';
+
+.exp-work-history {
+    margin-bottom: 20px;
+}
+
+.exp-work-title {
+    font-size: 26px;
+}
+
+.exp-sub-title {
+    margin-bottom: 10px;
+}
+
+.exp-section-title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.exp-section {
+    margin-bottom: 40px;
+}
+
+.exp-section:last-of-type {
+    margin-bottom: 0px;
+}
+
+.exp-work-stack {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    min-height: 42px;
+}
+
+.exp-short-description {
+    margin-bottom: 20px;
+}
+
+.exp-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.exp-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin-bottom: 20px;
+}
+
+img.exp-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.exp-icon {
+    font-size: 100px;
+    color: $header1-text;
+}
+
+.exp-label {
+    font-size: 32px;
+}
+
+.exp-info-list .exp-item {
+    flex-flow: row;
+    font-size: 22px;
+    justify-content: left;
+
+    .exp-icon {
+        font-size: 22px;
+        margin-right: 12px;
+    }
+
+    img.exp-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .exp-label {
+        font-size: 22px;
+        margin-right: 12px;
+    }
+
+    .exp-years {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .exp-container {
+        padding: 0;
+    }
+    .exp-label {
+        font-size: 22px !important;
+    }
+    .exp-info-list {
+        .exp-label {
+            font-size: 18px !important;
+        }
+        .exp-years {
+            display: none;
+        }
+    }
+}
+
+.devicons.devicons-photoshop::before {
+    content: "\e6b8"
+}

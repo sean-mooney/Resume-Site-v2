@@ -22,7 +22,7 @@ class App extends React.Component {
   }
   render() {
     const { match, location, history } = this.props;
-    var disableIntro = false;
+    var disableIntro = true;
     return (
       <div id="app" className="app">
         <Router history={history}>

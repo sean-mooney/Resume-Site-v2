@@ -1,0 +1,122 @@
+{
+    "experience": [
+        {
+            "title": "Front-end",
+            "content": [
+                {
+                    "language": "HTML",
+                    "icon": "devicon-html5-plain colored",
+                    "years": "4 years"
+                },
+                {
+                    "language": "(S)CSS",
+                    "icon": "devicon-css3-plain colored",
+                    "years": "4 years"
+                },
+                {
+                    "language": "JavaScript",
+                    "icon": "devicon-javascript-plain colored",
+                    "years": "4 years"
+                },
+                {
+                    "language": "Bootstrap",
+                    "icon": "devicon-bootstrap-plain colored",
+                    "years": "3 year"
+                },
+                {
+                    "language": "Angular",
+                    "icon": "devicon-angularjs-plain colored",
+                    "years": "2 years"
+                },
+                {
+                    "language": "React",
+                    "icon": "devicon-react-original colored",
+                    "years": "1 year"
+                }
+            ]
+        },
+        {
+            "title": "Back-end",
+            "content": [
+                {
+                    "language": "C#",
+                    "icon": "devicon-csharp-plain colored",
+                    "years": "1 year"
+                },
+                {
+                    "language": ".NET",
+                    "icon": "devicon-dot-net-plain colored",
+                    "years": "1 year"
+                },
+                {
+                    "language": "SQL",
+                    "icon": "devicons devicons-msql_server",
+                    "years": "1 year"
+                },
+                {
+                    "language": "Azure",
+                    "icon": "azure.png",
+                    "iconIsImg": true,
+                    "years": "< 1 year"
+                },
+                {
+                    "language": "Python",
+                    "icon": "devicon-python-plain colored",
+                    "years": "< 1 year"
+                }
+            ]
+        },
+        {
+            "title": "Other",
+            "type": "list",
+            "content": [
+                {
+                    "language": "Unity",
+                    "icon": "unity.png",
+                    "iconIsImg": true,
+                    "years": "2 year"
+                },
+                {
+                    "language": "Photoshop",
+                    "icon": "photoshop.png",
+                    "iconIsImg": true,
+                    "years": "2 year"
+                },
+                {
+                    "language": "PowerShell",
+                    "icon": "powershell.png",
+                    "iconIsImg": true,
+                    "years": "1 year"
+                },
+                {
+                    "language": "DevExpress",
+                    "icon": "devexpress-squarelogo.png",
+                    "iconIsImg": true,
+                    "years": "1 year"
+                },
+                {
+                    "language": "Blender",
+                    "icon": "blender.png",
+                    "iconIsImg": true,
+                    "years": "1 year"
+                },
+                {
+                    "language": "iOS",
+                    "icon": "devicon-apple-original colored",
+                    "years": "1 year"
+                },
+                {
+                    "language": "Android",
+                    "icon": "devicon-android-plain colored",
+                    "years": "1 year"
+                },
+                {
+                    "language": "LINQ-SQL",
+                    "icon": "linq.png",
+                    "iconIsImg": true,
+                    "years": "< 1 year"
+                }
+            ]
+        }
+    ]
+}

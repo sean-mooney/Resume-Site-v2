@@ -23,6 +23,7 @@ $sub-title-color: #888888;
 
 body {
     background: $app-bg;
+    overflow-y: overlay;
 }
 
 .app {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, matchPath, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAlt, faCoffee, faFile, faPhone, faBlog, faBars, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import './header.scss';
@@ -19,7 +19,7 @@ class Header extends React.Component {
     if (!this.state.headerNavElement) this.setState({headerNavElement: document.getElementById("header-nav")});
     if (wasBurger) this.state.headerNavElement.classList.toggle("show-nav");
     else this.state.headerNavElement.classList.remove("show-nav");
-    document.body.style.overflow === "hidden" ? document.body.style.overflow = "auto" : document.body.style.overflow = "hidden";
+    if (window.screen.width <= 1028 ) document.body.style.overflowY === "hidden" ? document.body.style.overflowY = "auto" : document.body.style.overflowY = "hidden";
   }
 
   render() {

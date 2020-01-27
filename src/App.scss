@@ -21,6 +21,12 @@ $header1-logo-border-hover: #282480;
 $title-color: black;
 $sub-title-color: #888888;
 
+$button-bg: #3BC8FF;
+$button-text: #FFF;
+$button-hover-bg: #FFF;
+$button-hover-text: #3BC8FF;
+
+
 body {
     background: $app-bg;
     overflow-y: overlay;
@@ -55,6 +61,22 @@ a {
 
 .italic {
     font-style: italic;
+}
+
+.seans-button {
+    color: $button-text;
+    background: $button-bg;
+    padding: 10px 25px;
+    border-radius: 6px;
+    transition: all 0.25s;
+    font-weight: 600;
+}
+
+.seans-button:hover {
+    color: $button-hover-text;
+    background: $button-hover-bg;
+    border: 2px solid $button-hover-text;
+    padding: 10px 30px;
 }
 
 @media (max-width: 1028px) {

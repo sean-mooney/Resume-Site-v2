@@ -9,7 +9,6 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './pages/about/about';
 import Experience from './pages/experience/experience';
-import Resume from './pages/resume/resume';
 import Contact from './pages/contact/contact';
 import Blog from './pages/blog/blog';
 
@@ -34,9 +33,6 @@ class App extends React.Component {
             <Route path="/experience">
               <Experience />
             </Route>
-            <Route path="/resume">
-              <Resume />
-            </Route>
             <Route path="/contact">
               <Contact />
             </Route>
@@ -44,7 +40,7 @@ class App extends React.Component {
               <Blog />
             </Route>
             <Route path="/">
-              <About />
+              <Experience />
             </Route>
           </Switch>
         </Router>

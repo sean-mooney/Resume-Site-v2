@@ -134,6 +134,20 @@
     display: none;
 }
 
+.header-current-location {
+    background-color: $header1-hover-bg;
+    color: $header1-hover-text;
+    .header-nav-label {
+        background-color: $header1-hover-bg;
+        color: $header1-hover-text;
+    }
+
+    .header-nav-icon {
+        color: $header1-hover-icon;
+        background: $header1-hover-icon-bg;
+    }
+}
+
 @media (max-width: 1028px) {
     .page-header {
         border: none;

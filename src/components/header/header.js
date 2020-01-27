@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAlt, faCoffee, faFile, faPhone, faBlog, faBars, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import './header.scss';
 
+import pdf from '../../documents/SeanMooneyResume.pdf';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -17,9 +19,12 @@ class Header extends React.Component {
 
   routeClicked(wasBurger) {
     if (!this.state.headerNavElement) this.setState({headerNavElement: document.getElementById("header-nav")});
-    if (wasBurger) this.state.headerNavElement.classList.toggle("show-nav");
-    else this.state.headerNavElement.classList.remove("show-nav");
     if (window.screen.width <= 1028 ) document.body.style.overflowY === "hidden" ? document.body.style.overflowY = "auto" : document.body.style.overflowY = "hidden";
+    if (wasBurger) this.state.headerNavElement.classList.toggle("show-nav");
+    else {
+      this.state.headerNavElement.classList.remove("show-nav");
+      window.scrollTo(0,0);
+    }
   }
 
   render() {
@@ -34,35 +39,35 @@ class Header extends React.Component {
         </div>
 
         <div id="header-nav" className="push-right header-nav">
-          <Link to="/about" className={`header-nav-item ${this.props.location.pathname === "/about" || this.props.location.pathname === "/" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
+          <Link to="/about" className={`header-nav-item ${this.props.location.pathname === "/about" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faUserAlt} />
             </div>
             <div className="header-nav-label">About</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/experience" className={`header-nav-item ${this.props.location.pathname === "/experience" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
+          <Link to="/experience" className={`header-nav-item ${this.props.location.pathname === "/experience" || this.props.location.pathname === "/" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faCoffee} />
             </div>
             <div className="header-nav-label">Experience</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/resume" className={`header-nav-item ${this.props.location.pathname === "/resume" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
+          <a href={pdf} target="_blank" className={`header-nav-item ${this.props.location.pathname === "/resume" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faFile} />
             </div>
             <div className="header-nav-label">Resume</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
-          </Link>
-          <Link to="/contact" className={`header-nav-item ${this.props.location.pathname === "/contact" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
+          </a>
+          <Link to="/contact" className={`header-nav-item ${this.props.location.pathname === "/contact" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faPhone} />
             </div>
             <div className="header-nav-label">Contact</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" ? "header-current-location" : ""}`} onClick={() => this.routeClicked(false)}>
+          <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faBlog} />
             </div>

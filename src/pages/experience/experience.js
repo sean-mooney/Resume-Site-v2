@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import './experience.scss';
 import *  as myExperience from './experience.json';
 import moment from 'moment';
+
+import pdf from '../../documents/SeanMooneyResume.pdf';
 
 export default class Experience extends React.Component {
     render() {
@@ -73,6 +76,13 @@ export default class Experience extends React.Component {
                                 </div>
                             );
                         }))}
+                        <div className="exp-resume-button-container">
+                            <a href={pdf} target="_blank">
+                                <div className="seans-button">
+                                    View resume
+                                </div>
+                            </a>
+                        </div>
                     </Container>
                 </div>
             </div>

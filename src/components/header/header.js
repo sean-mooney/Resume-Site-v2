@@ -53,20 +53,13 @@ class Header extends React.Component {
             <div className="header-nav-label">Experience</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <a href={pdf} target="_blank" className={`header-nav-item ${this.props.location.pathname === "/resume" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
+          <a href={pdf} target="_blank" rel="noopener noreferrer" className={`header-nav-item ${this.props.location.pathname === "/resume" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faFile} />
             </div>
             <div className="header-nav-label">Resume</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </a>
-          <Link to="/contact" className={`header-nav-item ${this.props.location.pathname === "/contact" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
-            <div className="header-nav-icon">
-              <FontAwesomeIcon icon={faPhone} />
-            </div>
-            <div className="header-nav-label">Contact</div>
-            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
-          </Link>
           <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faBlog} />
@@ -74,6 +67,14 @@ class Header extends React.Component {
             <div className="header-nav-label">Blog</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
+          <Link to="/contact" className={`header-nav-item ${this.props.location.pathname === "/contact" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
+            <div className="header-nav-icon">
+              <FontAwesomeIcon icon={faPhone} />
+            </div>
+            <div className="header-nav-label">Contact</div>
+            <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
+          </Link>
+          
           <a href="https://github.com/sean-mooney" rel="noopener noreferrer" target="_blank" className="header-nav-item" onClick={() => document.getElementById("header-nav").classList.remove("show-nav")}>
             <div className="header-nav-icon">
               <i className="devicon-github-plain"></i>

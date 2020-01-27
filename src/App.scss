@@ -26,6 +26,10 @@ $button-text: #FFF;
 $button-hover-bg: #FFF;
 $button-hover-text: #3BC8FF;
 
+$input-border: #3BC8FF;
+
+$error-text: red;
+
 
 body {
     background: $app-bg;
@@ -70,12 +74,16 @@ a {
     border-radius: 6px;
     transition: all 0.25s;
     font-weight: 600;
+    max-width: 200px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .seans-button:hover {
     color: $button-hover-text;
     background: $button-hover-bg;
     border: 2px solid $button-hover-text;
+    font-size: 20px;
     padding: 10px 30px;
 }
 

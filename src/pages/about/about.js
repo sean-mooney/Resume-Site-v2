@@ -11,7 +11,7 @@ export default class About extends React.Component {
                     <Container className="about-container">
                         <Row className="about-info">
                             <Col xs={12} sm={6} className="about-photo">
-                                <img src={me}></img>
+                                <img src={me} alt="me"></img>
                             </Col>
                             <Col xs={12} sm={6}>
                                 <div className="about-title">

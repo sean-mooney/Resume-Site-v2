@@ -1,0 +1,63 @@
+@import '../../App.scss';
+
+.contact-info {
+    flex-flow: column;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-inputs {
+    display: flex;
+    flex-flow: column;
+    margin-top: 20px;
+}
+
+.contact-input-container {
+    margin: 10px 0;
+
+    .contact-label {
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .contact-input input, .contact-input textarea {
+        border-radius: 3px;
+        border: 2px solid $input-border;
+        min-width: 300px;
+        padding: 6px 12px;
+    }
+    .contact-input textarea {
+        width: 500px;
+        min-width: 200px;
+        max-width: 950px;
+        
+        resize: both;
+
+        height: 200px;
+        min-height: 100px;
+        max-height: 400px;
+    }
+}
+
+.contact-form-error {
+    color: $error-text;
+}
+
+@media (max-width: 1028px) {
+    .contact-input input {
+        width: 100%;
+    }
+
+    .seans-button {
+        margin: auto;
+    }
+    .contact-input textarea {
+        width: 100% !important;
+        resize: none !important;
+        height: 200px !important;
+    }
+}

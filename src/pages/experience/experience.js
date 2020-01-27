@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import './experience.scss';
 import *  as myExperience from './experience.json';
@@ -9,7 +8,7 @@ import pdf from '../../documents/SeanMooneyResume.pdf';
 
 export default class Experience extends React.Component {
     render() {
-        const imgPath = "/images/"
+        const imgPath = window.location.hostname.includes("localhost") ? "/images/" : "/newnew/images/";
         return (
             <div className="page-container">
                 <div className="content-container">
@@ -54,7 +53,7 @@ export default class Experience extends React.Component {
                                         {section.content.map((stack, j) => {
                                             return (
                                                 <Col xs={6} sm={4} key={`exp-item-${j}`} className="exp-item">
-                                                    {stack.iconIsImg ? <img className="exp-icon" src={imgPath + stack.icon} /> : <i className={`${stack.icon} exp-icon`}></i>}
+                                                    {stack.iconIsImg ? <img className="exp-icon" src={imgPath + stack.icon} alt={stack.language}/> : <i className={`${stack.icon} exp-icon`}></i>}
                                                     <div className="exp-label">{stack.language}</div>
                                                     <div className="exp-years">({stack.years})</div>
                                                 </Col>
@@ -66,7 +65,7 @@ export default class Experience extends React.Component {
                                         {section.content.map((stack, j) => {
                                             return (
                                                 <Col xs={6} sm={2} key={`exp-item-${j}`} className="exp-item">
-                                                    {stack.iconIsImg ? <img className="exp-icon" src={imgPath + stack.icon} /> : <i className={`${stack.icon} exp-icon`}></i>}
+                                                    {stack.iconIsImg ? <img className="exp-icon" src={imgPath + stack.icon} alt={stack.language}/> : <i className={`${stack.icon} exp-icon`}></i>}
                                                     <div className="exp-label">{stack.language}</div>
                                                     <div className="exp-years">{stack.years}</div>
                                                 </Col>
@@ -77,7 +76,7 @@ export default class Experience extends React.Component {
                             );
                         }))}
                         <div className="exp-resume-button-container">
-                            <a href={pdf} target="_blank">
+                            <a href={pdf} target="_blank" rel="noopener noreferrer">
                                 <div className="seans-button">
                                     View resume
                                 </div>

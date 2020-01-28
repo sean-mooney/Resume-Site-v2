@@ -31,3 +31,27 @@
     margin: 0 20px;
     line-height: 40px;
 }
+
+@media (max-width: 768px) {
+    .about-photo {
+        text-align: center;
+        img {
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+    .about-text {
+        margin: 0;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-container {
+        padding: 0;
+    }
+    .about-photo img{
+        width: 75%;
+    }
+}

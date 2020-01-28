@@ -10,10 +10,10 @@ export default class About extends React.Component {
                 <div className="content-container">
                     <Container className="about-container">
                         <Row className="about-info">
-                            <Col xs={12} sm={6} className="about-photo">
+                            <Col xs={12} lg={6} className="about-photo">
                                 <img src={me} alt="me"></img>
                             </Col>
-                            <Col xs={12} sm={6}>
+                            <Col xs={12} lg={6}>
                                 <div className="about-title">
                                     Sean Mooney
                                 </div>

@@ -9,13 +9,46 @@ import pdf from '../../documents/SeanMooneyResume.pdf';
 export default class Experience extends React.Component {
     render() {
         const imgPath = window.location.hostname.includes("localhost") ? "/images/" : "/newnew/images/";
+        function goToSection(section) {
+            switch (section) {
+                case "Work":
+                    scrollMe("work-section");
+                    break;
+                case "Projects":
+                    scrollMe("projects-section");
+                    break;
+                case "Skills":
+                    scrollMe("skills-section");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function scrollMe(elementId) {
+            var elementPosition = document.getElementById(elementId).getBoundingClientRect().top + window.scrollY;
+            var offsetPosition = elementPosition - 130;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+
         return (
             <div className="page-container">
                 <div className="content-container">
+                    <Row className="exp-quick-nav-container">
+                        <div className="exp-quick-nav">
+                            <Col xs={4} onClick={() => goToSection("Work")} className="exp-quick-nav-item">Work</Col>
+                            <Col xs={4} onClick={() => goToSection("Projects")} className="exp-quick-nav-item">Projects</Col>
+                            <Col xs={4} onClick={() => goToSection("Skills")} className="exp-quick-nav-item">Skills</Col>
+                        </div>
+                    </Row>
                     <Container className="exp-container">
-                        <div className="exp-section-title">Work</div>
+                        <div id="work-section" className="exp-section-title">Work</div>
                         <Row className="exp-work-history">
-                            <Col xs={12} sm={6}>
+                            <Col className="exp-work-history-item" xs={12} sm={6}>
                                 <div className="exp-work-title">Baylor Scott &amp; White</div>
                                 <div className="exp-sub-title italic">
                                     Software Engineer
@@ -28,7 +61,7 @@ export default class Experience extends React.Component {
                                     legacy applications and portals through UI and API changes.
                                 </div>
                             </Col>
-                            <Col xs={12} sm={6}>
+                            <Col className="exp-work-history-item" xs={12} sm={6}>
                                 <div className="exp-work-title">Communico</div>
                                 <div className="exp-sub-title italic">
                                     Software Engineer
@@ -43,7 +76,7 @@ export default class Experience extends React.Component {
                             </Col>
                         </Row>
 
-                        <div className="exp-section-title">Personal Projects</div>
+                        <div id="projects-section" className="exp-section-title">Personal Projects</div>
                         <Row className="exp-work-history">
                             <Col className="exp-personal-item" xs={12}>
                                 <div className="exp-work-title">Asteroids HTML</div>
@@ -142,7 +175,7 @@ export default class Experience extends React.Component {
                                 </div>
                             </Col>
                         </Row>
-                        <div className="exp-section-title">Skills</div>
+                        <div id="skills-section" className="exp-section-title">Skills</div>
                         {myExperience.experience.map(((section, i) => {
                             return (
                                 <div key={`exp-section-${i}`} className="exp-section">

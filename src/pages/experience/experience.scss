@@ -36,7 +36,7 @@
     min-height: 42px;
 }
 
-.exp-personal-item {
+.exp-personal-item, .exp-work-history-item {
     margin-bottom: 30px;
 }
 
@@ -110,6 +110,52 @@ img.exp-icon {
     margin-bottom: 20px;
 }
 
+.exp-container {
+    margin-top: 30px;
+}
+
+.exp-quick-nav-container {
+    display: none;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    margin: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+    
+    .exp-quick-nav {
+        display: inherit;
+        width: 100%;
+        margin: 0 20px;
+        border: 2px solid $header1-hover-border;
+        border-radius: 8px;
+        background-color: $header1-bg;
+        color: $header1-text;
+    }
+    .exp-quick-nav-item {
+        border-right: 1px solid black;
+        transition: all 0.25s;
+        padding: 3px 0;
+    }
+    .exp-quick-nav-item:active {
+        background: $header1-hover-bg;
+        color: $header1-hover-text;
+    }
+
+    .exp-quick-nav-item:last-of-type {
+        border-right: none;
+    }
+}
+@media (max-width: 768px) {
+    .exp-label {
+        font-size: 24px;
+    }
+    .exp-quick-nav-container {
+        display: flex;
+    }
+}
 @media (max-width: 576px) {
     .exp-container {
         padding: 0;

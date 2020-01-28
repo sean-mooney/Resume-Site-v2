@@ -27,9 +27,9 @@ export default class Contact extends React.Component {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
-                'Content-Type': 'application/json'
+                Content: 'application/x-www-form-urlencoded'
             },
-            body: JSON.stringify({
+            data: JSON.stringify({
                 name: name,
                 email: email,
                 phone: phone,

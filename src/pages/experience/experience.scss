@@ -26,20 +26,32 @@
     margin-bottom: 0px;
 }
 
-.exp-work-stack {
+.exp-work-stack, .exp-personal-work-stack {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+.exp-work-stack {
     min-height: 42px;
 }
 
-.exp-short-description {
-    margin-bottom: 20px;
+.exp-personal-item {
+    margin-bottom: 30px;
 }
 
 .exp-title {
     font-size: 26px;
     margin-bottom: 20px;
+}
+
+.exp-personal-project-button-container {
+    margin-top: 16px;
+    display: flex;
+    .seans-button {
+        width: 120px;
+        margin-right: 20px;
+    }
 }
 
 .exp-item {

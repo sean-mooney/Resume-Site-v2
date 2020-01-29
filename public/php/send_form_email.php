@@ -40,10 +40,6 @@ if(isset($_POST['email'])) {
     $error_message .= 'The First Name you entered does not appear to be valid.<br />';
   }
 
-  if(strlen($message) < 2) {
-    $error_message .= 'The message you entered does not appear to be valid.<br />';
-  }
-
   if(strlen($error_message) > 0) {
     died($error_message);
   }
@@ -71,7 +67,7 @@ header ("location: /contact-sent.html");
 ?>
 
 
-Thank you for contacting us. We will be in touch with you very soon.
+Thank you for contacting me. We will be in touch with you very soon.
 
 <?php
 

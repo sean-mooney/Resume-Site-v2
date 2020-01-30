@@ -50,6 +50,7 @@
 @media (max-width: 1028px) {
     .contact-input input {
         width: 100%;
+        max-width: 500px;
     }
 
     .seans-button {
@@ -59,5 +60,11 @@
         width: 100% !important;
         resize: none !important;
         height: 200px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-input input {
+        min-width: unset !important;
     }
 }

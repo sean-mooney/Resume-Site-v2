@@ -10,6 +10,7 @@ import About from './pages/about/about';
 import Experience from './pages/experience/experience';
 import Contact from './pages/contact/contact';
 import Blog from './pages/blog/blog';
+import Post from './pages/post/post';
 
 import Header from './components/header/header';
 import Intro from './components/intro/intro';
@@ -31,6 +32,9 @@ class App extends React.Component {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/blog/post/:id">
+              <Post />
             </Route>
             <Route path="/blog">
               <Blog />

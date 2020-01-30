@@ -22,36 +22,6 @@
     100% {transform: rotateZ(359deg);}
 }
 
-.blog-post-card {
-    margin: 16px 30px;
-    border: 1px solid $card-border;
-    box-shadow: 1px 1px 5px $card-shadow;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
-    height: 200px;
-    transition: all 0.25s;
-}
-
-.blog-post-card:hover {
-    color: $header1-hover-text;
-    background: $header1-hover-bg;
-
-    .blog-post-title {
-        color: $header1-hover-text;
-    }
-    .blog-post-upload-date {
-        color: $header1-hover-text;
-    }
-}
-
-.blog-post-card-top {
-    display: flex;
-    align-items: center;
-}
-
 .blog-post-title {
     color: $header1-text;
     font-size: 32px;
@@ -67,10 +37,6 @@
     color: $sub-title-color;
     transition: all 0.25s;
     font-size: 14px;
-}
-
-.blog-post-card-bottom {
-    margin-top: 16px;
 }
 
 .blog-no-data {

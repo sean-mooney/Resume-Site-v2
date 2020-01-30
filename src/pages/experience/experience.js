@@ -7,42 +7,49 @@ import moment from 'moment';
 import pdf from '../../documents/SeanMooneyResume.pdf';
 
 export default class Experience extends React.Component {
+    constructor (props) {
+        super(props);
+        this.goToSection = this.goToSection.bind(this);
+        this.scrollMe = this.scrollMe.bind(this);
+    }
+
+    goToSection(section) {
+        switch (section) {
+            case "Work":
+                this.scrollMe("work-section");
+                break;
+            case "Projects":
+                this.scrollMe("projects-section");
+                break;
+            case "Skills":
+                this.scrollMe("skills-section");
+                break;
+            default:
+                break;
+        }
+    }
+
+    scrollMe(elementId) {
+        var elementPosition = document.getElementById(elementId).getBoundingClientRect().top + window.scrollY;
+        var offsetPosition = elementPosition - 140;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
     render() {
         const imgPath = window.location.hostname.includes("localhost") ? "/images/" : "/newnew/images/";
-        function goToSection(section) {
-            switch (section) {
-                case "Work":
-                    scrollMe("work-section");
-                    break;
-                case "Projects":
-                    scrollMe("projects-section");
-                    break;
-                case "Skills":
-                    scrollMe("skills-section");
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        function scrollMe(elementId) {
-            var elementPosition = document.getElementById(elementId).getBoundingClientRect().top + window.scrollY;
-            var offsetPosition = elementPosition - 130;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
 
         return (
             <div className="page-container">
                 <div className="content-container">
                     <Row className="exp-quick-nav-container">
                         <div className="exp-quick-nav">
-                            <Col xs={4} onClick={() => goToSection("Work")} className="exp-quick-nav-item">Work</Col>
-                            <Col xs={4} onClick={() => goToSection("Projects")} className="exp-quick-nav-item">Projects</Col>
-                            <Col xs={4} onClick={() => goToSection("Skills")} className="exp-quick-nav-item">Skills</Col>
+                            <Col xs={4} onClick={() => this.goToSection("Work")} className="exp-quick-nav-item">Work</Col>
+                            <Col xs={4} onClick={() => this.goToSection("Projects")} className="exp-quick-nav-item">Projects</Col>
+                            <Col xs={4} onClick={() => this.goToSection("Skills")} className="exp-quick-nav-item">Skills</Col>
                         </div>
                     </Row>
                     <Container className="exp-container">

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './post.scss';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'; 
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ class Post extends React.Component {
         super(props);
         this.state = { post: null, loadPage: false, id: this.props.match.params.id };
         this.getPostData = this.getPostData.bind(this);
-        console.log(this.props);
     }
 
     componentDidMount() {
@@ -33,7 +32,7 @@ class Post extends React.Component {
 
     render() {
         return (
-            <div className="page-container">
+            <div className="page-container blog">
                 <div className="content-container">
                     <Container className="blog-container">
                         {this.state.loadPage ?
@@ -43,8 +42,8 @@ class Post extends React.Component {
                                         <div className="blog-post-title">
                                             {this.state.post.title}
                                         </div>
-                                        <div className="push-right blog-post-upload-date">
-                                            {moment(this.state.post.uploadDate).format("D MMM, YYYY")} ({moment(this.state.post.uploadDate).fromNow()}) 
+                                        <div className="blog-post-upload-date">
+                                            {moment(new Date(this.state.post.uploadDate)).format("D MMM, YYYY")} ({moment(new Date(this.state.post.uploadDate)).fromNow()})
                                         </div>
                                         <div className="blog-post-content">
                                             {!this.state.post.content ||
@@ -52,31 +51,63 @@ class Post extends React.Component {
                                                     switch (block.type) {
                                                         case "code":
                                                             return (
-                                                                <div key={`block-${i}`} className="blog-post-block-code">
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-code">
                                                                     Code block coming soon
                                                                 </div>
                                                             )
                                                         case "link":
                                                             return (
-                                                                <div key={`block-${i}`} className="blog-post-block-link-container">
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-link-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
                                                                     <a className="blog-post-block-link" href={block.link}>{block.content}</a>
+                                                                </div>
+                                                            )
+                                                        case "button":
+                                                            return (
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-button-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
+                                                                    <a className="blog-post-block-link" href={block.link} target="_blank" rel="noopener noreferrer">
+                                                                        <div className="seans-button">
+                                                                            {block.content}
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
                                                             )
                                                         case "html":
                                                             return (
-                                                                <div key={`block-${i}`} dangerouslySetInnerHTML={{__html: block.content}} className="blog-post-block-custom-html">
+                                                                <div key={`block-${i}`} dangerouslySetInnerHTML={{ __html: block.content }} className="blog-post-block blog-post-block-custom-html">
                                                                 </div>
                                                             )
                                                         case "image":
                                                             return (
-                                                                <div key={`block-${i}`} className="blog-post-block-image">
-                                                                    <img className="blog-post-img" alt="" src={block.content}/>
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-image">
+                                                                    <img className="blog-post-img" alt="" src={block.content} />
+                                                                </div>
+                                                            )
+                                                        case "title":
+                                                            return (
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-title">
+                                                                    {block.content}
+                                                                </div>
+                                                            )
+                                                        case "sub-title":
+                                                            return (
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-sub-title">
+                                                                    {block.content}
+                                                                </div>
+                                                            )
+                                                        case "spacer":
+                                                            return (
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-spacer"></div>
+                                                            )
+                                                        case "emphasized":
+                                                            return (
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-emphasized">
+                                                                    {block.content}
                                                                 </div>
                                                             )
                                                         case "text":
                                                         default:
                                                             return (
-                                                                <div key={`block-${i}`} className="blog-post-block-text">
+                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-text">
                                                                     {block.content}
                                                                 </div>
                                                             )
@@ -91,10 +122,10 @@ class Post extends React.Component {
                                     </div>
                                 }
                             </div>
-                        :
-                        <div className="blog-spinner">
-                            <FontAwesomeIcon className="spin-icon" icon={faSpinner} />
-                            One sec...
+                            :
+                            <div className="blog-spinner">
+                                <FontAwesomeIcon className="spin-icon" icon={faSpinner} />
+                                One sec...
                         </div>
                         }
                     </Container>

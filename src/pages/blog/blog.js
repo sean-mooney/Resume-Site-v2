@@ -24,6 +24,7 @@ class Blog extends React.Component {
     getPosts() {
         axios.get(apiUrl + "/posts").then(res => {
             if (res.status === 200) {
+                if (res.data.length > 1) res.data = res.data.sort((a, b) => {return moment(new Date(a.uploadDate).isAfter(moment(new Date(b.uploadDate))))})
                 this.setState({ posts: res.data, loadPage: true });
             }
         }).catch(err => {
@@ -52,7 +53,7 @@ class Blog extends React.Component {
                                                             {post.title}
                                                         </div>
                                                         <div className="push-right blog-post-upload-date">
-                                                            {moment(post.uploadDate).format("D MMM, YYYY")} ({moment(post.uploadDate).fromNow()}) 
+                                                            {moment(new Date(post.uploadDate)).format("D MMM, YYYY")} ({moment(new Date(post.uploadDate)).fromNow()}) 
                                                         </div>
                                                     </div>
                                                     <div className="blog-post-card-bottom">

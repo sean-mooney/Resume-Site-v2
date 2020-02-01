@@ -53,7 +53,7 @@ class Header extends React.Component {
             <div className="header-nav-label">Experience</div>
             <FontAwesomeIcon className="push-right current-page-icon" icon={faArrowAltCircleLeft} />
           </Link>
-          <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
+          <Link to="/blog" className={`header-nav-item ${this.props.location.pathname === "/blog" || this.props.location.pathname.includes("/blog/post/")  ? "header-current-location" : ""}`} onClick={() => this.routeClicked()}>
             <div className="header-nav-icon">
               <FontAwesomeIcon icon={faBlog} />
             </div>

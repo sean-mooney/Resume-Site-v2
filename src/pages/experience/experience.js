@@ -40,7 +40,7 @@ export default class Experience extends React.Component {
     }
 
     render() {
-        const imgPath = window.location.hostname.includes("localhost") ? "/images/" : "/newnew/images/";
+        const imgPath = "/images/";
 
         return (
             <div className="page-container">

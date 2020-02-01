@@ -22,14 +22,13 @@ export default class Contact extends React.Component {
         let phone = document.getElementById("txt-phone").value;
         let message = document.getElementById("txt-message").value;
 
-        const url = window.location.hostname.includes("localhost") ? "/php/send_form_email.php" : "/newnew/php/send_form_email.php";
+        const url = "/php/send_form_email.php";
         fetch(url, {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
                 Content: 'application/x-www-form-urlencoded'
             },
-            data: JSON.stringify({
+            body: JSON.stringify({
                 name: name,
                 email: email,
                 phone: phone,

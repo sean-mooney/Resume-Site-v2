@@ -48,7 +48,7 @@
 }
 
 .blog-post-content {
-    margin-top: 30px;
+    margin-top: 16px;
 }
 
 .blog-post-block {
@@ -73,7 +73,7 @@
 }
 
 .blog-post-emphasized {
-    margin: 60px 100px;
+    margin: 60px 75px;
     font-weight: 500;
 }
 
@@ -95,6 +95,10 @@
     text-indent: 30px;
 }
 
+.no-indent {
+    text-indent: 0 !important;
+}
+
 @media (max-width: 576px) {
     .blog-post-container {
         padding: 20px;
@@ -113,7 +117,7 @@
     }
 
     .blog-post-emphasized {
-        margin: 30px 40px;
+        margin: 30px 20px;
         font-weight: 500;
     }
 
@@ -129,5 +133,11 @@
 
     .blog-post-block-text, .blog-post-block-custom-html {
         text-indent: 0px;
+    }
+
+    .blog-post-title {
+        white-space: normal;
+        width: 100%;
+        font-size: 20px;
     }
 }

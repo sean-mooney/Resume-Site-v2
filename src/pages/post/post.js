@@ -7,7 +7,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 
-const apiUrl = "https://sean-mooney-blog.herokuapp.com/blog";
+const apiUrl = window.location.hostname.includes("localhost") ? "http://localhost:9000/blog" : "https://sean-mooney-blog.herokuapp.com/blog";
 
 class Post extends React.Component {
     constructor(props) {
@@ -48,7 +48,7 @@ class Post extends React.Component {
                                         <div className="blog-post-content">
                                             {!this.state.post.content ||
                                                 this.state.post.content.map((block, i) => {
-                                                    var showAd = i > 0 && i % 5 === 0;
+                                                    var showAd = (!this.state.post.controlledAds && i > 0 && i % 5 === 0) || (this.state.post.controlledAds && block.showAd);
                                                     var displayElement = null;
                                                     switch (block.type) {
                                                         case "code":
@@ -110,7 +110,7 @@ class Post extends React.Component {
                                                             break;
                                                         case "emphasized":
                                                             displayElement = (
-                                                                <div className="blog-post-block blog-post-emphasized">
+                                                                <div className="blog-post-block blog-post-emphasized" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
                                                                     {block.content}
                                                                 </div>
                                                             )
@@ -118,7 +118,7 @@ class Post extends React.Component {
                                                         case "text":
                                                         default:
                                                             displayElement = (
-                                                                <div className="blog-post-block blog-post-block-text">
+                                                                <div className={`blog-post-block blog-post-block-text ${block.noIndent ? "no-indent" : ""}`}>
                                                                     {block.content}
                                                                 </div>
                                                             )
@@ -128,7 +128,7 @@ class Post extends React.Component {
                                                         <div key={`block-${i}`} className="blog-post-block-container">
                                                             {!showAd || 
                                                             <div className="blog-post-ad">
-                                                                ADDDDDDDDDD
+                                                                {/* ADDDDDDDDDD */}
                                                             </div>
                                                             }
                                                             {displayElement}

@@ -7,7 +7,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
 
-const apiUrl = "https://sean-mooney-blog.herokuapp.com/blog";
+const apiUrl = window.location.hostname.includes("localhost") ? "http://localhost:9000/blog" : "https://sean-mooney-blog.herokuapp.com/blog";
 
 class Blog extends React.Component {
     constructor(props) {
@@ -24,10 +24,11 @@ class Blog extends React.Component {
     getPosts() {
         axios.get(apiUrl + "/posts").then(res => {
             if (res.status === 200) {
-                if (res.data.length > 1) res.data = res.data.sort((a, b) => {return moment(new Date(a.uploadDate).isAfter(moment(new Date(b.uploadDate))))})
+                if (res.data.length > 1) res.data = res.data.sort((a, b) => { return moment(new Date(a.uploadDate)).isAfter(moment(new Date(b.uploadDate))) });
                 this.setState({ posts: res.data, loadPage: true });
             }
-        }).catch(err => {
+        })
+        .catch(err => {
             console.log("error retrieving posts", err);
         });
     }

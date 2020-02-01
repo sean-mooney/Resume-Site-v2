@@ -13,7 +13,12 @@ export default class Experience extends React.Component {
         this.scrollMe = this.scrollMe.bind(this);
     }
 
-    goToSection(section) {
+    goToSection(e, section) {
+        let element = e.target;
+        element.classList.add("exp-sub-nav-hit");
+        setTimeout(() => {
+            element.classList.remove("exp-sub-nav-hit");
+        }, 200)
         switch (section) {
             case "Work":
                 this.scrollMe("work-section");
@@ -47,9 +52,9 @@ export default class Experience extends React.Component {
                 <div className="content-container">
                     <Row className="exp-quick-nav-container">
                         <div className="exp-quick-nav">
-                            <Col xs={4} onClick={() => this.goToSection("Work")} className="exp-quick-nav-item">Work</Col>
-                            <Col xs={4} onClick={() => this.goToSection("Projects")} className="exp-quick-nav-item">Projects</Col>
-                            <Col xs={4} onClick={() => this.goToSection("Skills")} className="exp-quick-nav-item">Skills</Col>
+                            <Col xs={4} onClick={(e) => this.goToSection(e, "Work")} className="exp-quick-nav-item">Work</Col>
+                            <Col xs={4} onClick={(e) => this.goToSection(e, "Projects")} className="exp-quick-nav-item">Projects</Col>
+                            <Col xs={4} onClick={(e) => this.goToSection(e, "Skills")} className="exp-quick-nav-item">Skills</Col>
                         </div>
                     </Row>
                     <Container className="exp-container">

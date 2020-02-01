@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import smoothscroll from 'smoothscroll-polyfill';
+
 import About from './pages/about/about';
 import Experience from './pages/experience/experience';
 import Contact from './pages/contact/contact';
@@ -17,6 +19,7 @@ import Intro from './components/intro/intro';
 
 class App extends React.Component {
   render() {
+    smoothscroll.polyfill();
     const { history } = this.props;
     var disableIntro = window.location.hostname.includes("localhost");
     return (

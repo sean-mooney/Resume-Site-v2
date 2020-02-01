@@ -23,17 +23,22 @@ export default class Contact extends React.Component {
         let message = document.getElementById("txt-message").value;
 
         const url = "/php/send_form_email.php";
+        var fd = new FormData();
+        var data = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        };
+        for(var i in data){
+            fd.append(i,data[i]);
+         }
         fetch(url, {
             method: 'POST',
             headers: {
                 Content: 'application/x-www-form-urlencoded'
             },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            })
+            body: fd
         }).then(res => {
             if (res && res.status === 200)  {
                 this.setState({emailSent: true});

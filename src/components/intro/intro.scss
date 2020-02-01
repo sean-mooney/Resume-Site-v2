@@ -39,10 +39,10 @@
 }
 
 @keyframes mobile-text-intro {
-    0% {top: 60%; opacity: 0;}
-    20%, 67% {top: 45%; left: 41%; opacity: 1;}
-    80% {top: 10%; opacity: 0.1;}
-    100% {top: 0%; opacity: 0; display: none;}
+    0% {top: 60%; left: 40%; opacity: 0;}
+    20%, 67% {top: 45%; left: 40%; opacity: 1;}
+    80% {top: 10%; left: 40%; opacity: 0.1;}
+    100% {top: 0%; left: 40%; opacity: 0; display: none;}
 }
 
 @keyframes text-intro {

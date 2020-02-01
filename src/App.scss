@@ -106,3 +106,13 @@ a {
     font-family: Copperplate;
     src: url(./fonts/Copperplate.woff2);
 }
+
+.page-container {
+    opacity: 0;
+    animation: fade-in forwards 0.5s;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}

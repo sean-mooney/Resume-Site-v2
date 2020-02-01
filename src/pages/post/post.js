@@ -48,22 +48,26 @@ class Post extends React.Component {
                                         <div className="blog-post-content">
                                             {!this.state.post.content ||
                                                 this.state.post.content.map((block, i) => {
+                                                    var showAd = i > 0 && i % 5 === 0;
+                                                    var displayElement = null;
                                                     switch (block.type) {
                                                         case "code":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-code">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-code">
                                                                     Code block coming soon
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "link":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-link-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-link-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
                                                                     <a className="blog-post-block-link" href={block.link}>{block.content}</a>
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "button":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-button-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-button-container" style={{ "textAlign": `${block.align ? block.align : 'left'}` }}>
                                                                     <a className="blog-post-block-link" href={block.link} target="_blank" rel="noopener noreferrer">
                                                                         <div className="seans-button">
                                                                             {block.content}
@@ -71,47 +75,65 @@ class Post extends React.Component {
                                                                     </a>
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "html":
-                                                            return (
-                                                                <div key={`block-${i}`} dangerouslySetInnerHTML={{ __html: block.content }} className="blog-post-block blog-post-block-custom-html">
+                                                            displayElement = (
+                                                                <div dangerouslySetInnerHTML={{ __html: block.content }} className="blog-post-block blog-post-block-custom-html">
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "image":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-image">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-image">
                                                                     <img className="blog-post-img" alt="" src={block.content} />
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "title":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-title">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-title">
                                                                     {block.content}
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "sub-title":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-sub-title">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-sub-title">
                                                                     {block.content}
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "spacer":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-spacer"></div>
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-spacer"></div>
                                                             )
+                                                            break;
                                                         case "emphasized":
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-emphasized">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-emphasized">
                                                                     {block.content}
                                                                 </div>
                                                             )
+                                                            break;
                                                         case "text":
                                                         default:
-                                                            return (
-                                                                <div key={`block-${i}`} className="blog-post-block blog-post-block-text">
+                                                            displayElement = (
+                                                                <div className="blog-post-block blog-post-block-text">
                                                                     {block.content}
                                                                 </div>
                                                             )
+                                                            break;
                                                     }
+                                                    return (
+                                                        <div key={`block-${i}`} className="blog-post-block-container">
+                                                            {!showAd || 
+                                                            <div className="blog-post-ad">
+                                                                ADDDDDDDDDD
+                                                            </div>
+                                                            }
+                                                            {displayElement}
+                                                        </div>
+                                                    )
                                                 })
                                             }
                                         </div>
